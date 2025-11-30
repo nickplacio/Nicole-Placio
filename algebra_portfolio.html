@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algebra Portfolio - Nicole Placio | NEMSU</title>
+    <meta name="description" content="A portfolio showcasing what I learned in Advanced College Algebra at NEMSU. Explore algebraic expressions, factoring, and more.">
+    <meta property="og:title" content="Algebra Portfolio - Nicole Placio">
+    <meta property="og:description" content="Advanced College Algebra learning journey at NEMSU">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-light: #f0f4f1;
+            --bg-card: #ffffff;
+            --text-dark: #1a3a1a;
+            --text-light: #5a7559;
+            --primary: #2d5016;
+            --primary-light: #3a6b35;
+            --accent: #a8c969;
+            --border: #d4e5d1;
+            --muted: #e8f0e6;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f4f1" width="1200" height="600"/><text x="50" y="100" font-size="48" fill="%23d4e5d1" opacity="0.3">x²+y²=z²</text><text x="900" y="200" font-size="36" fill="%23d4e5d1" opacity="0.3">∫f(x)dx</text><text x="100" y="400" font-size="40" fill="%23d4e5d1" opacity="0.3">π ≈ 3.14159</text><text x="800" y="500" font-size="44" fill="%23d4e5d1" opacity="0.3">√2 ≈ 1.414</text></svg>');
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin: 8px 0;
+            opacity: 0.95;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-card {
+            background-color: var(--bg-card);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .about-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .topic-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            border-color: var(--primary-light);
+        }
+
+        .topic-card h3 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .topic-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .teacher-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .teacher-image {
+            width: 300px;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            background: var(--accent);
+        }
+
+        .teacher-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .teacher-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .teacher-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .teacher-quote {
+            margin-top: 30px;
+            padding: 20px;
+            background: var(--muted);
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .reflection-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reflection-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .reflection-photo {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            background: var(--accent);
+        }
+
+        .reflection-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-caption {
+            text-align: center;
+            margin-top: 15px;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        footer {
+            background-color: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .teacher-container {
+                grid-template-columns: 1fr;
+            }
+
+            .teacher-image {
+                width: 100%;
+                height: auto;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+        }
+
+        .card-wrapper {
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Algebra Portfolio</h1>
+            <p>Nicole Placio</p>
+            <p>NEMSU</p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <div class="card-wrapper">
+                <h2>Course Overview</h2>
+                <p class="about-text">The Advanced College Algebra program at NEMSU elevated my analytical abilities and broadened my comprehension of algebraic systems. The curriculum prioritized transparent reasoning, strategic methodologies, and conceptual mastery rather than surface-level memorization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <div class="container">
+            <h2>Knowledge & Skills Acquired</h2>
+            <div class="topics-grid">
+                <div class="topic-card">
+                    <h3>Building with Variables</h3>
+                    <p>Mastered the skill of expressing mathematical relationships through symbols, numbers, and operations. Converting real-world situations into symbolic form has become intuitive, allowing me to grasp the deeper significance of each equation I encounter.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Understanding Expression Elements</h3>
+                    <p>Developed the ability to recognize and distinguish between terms, factors, coefficients, and numerical values. This foundational knowledge makes it easier to manipulate and restructure any algebraic form accurately.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Core Algebraic Operations</h3>
+                    <p>Strengthened proficiency in addition, subtraction, multiplication, division, and distribution. These core techniques have become second nature, empowering me to organize expressions and set up problems for efficient resolution.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Decomposition & Rational Forms</h3>
+                    <p>Discovered how decomposition reveals the hidden structure of complex expressions, enabling me to break down equations and reduce fractions by eliminating shared components.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Strategic Decomposition Methods</h3>
+                    <p>Explored multiple approaches to decomposition including extraction of shared factors, regrouping strategies, and recognition of notable patterns such as quadratic differences and binomial squares.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Working with Rational Expressions</h3>
+                    <p>Gained proficiency in handling fractions with polynomial numerators and denominators, learning to identify common bases, reduce multi-layered fractions, and resolve equations involving fractional components.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Power and Exponent Rules</h3>
+                    <p>Internalized the multiplication, division, and power principles governing exponents — crucial tools for simplifying expressions containing exponential terms and addressing associated challenges.</p>
+                </div>
+                <div class="topic-card">
+                    <h3>Logarithmic Functions</h3>
+                    <p>Understood the inverse relationship between exponential and logarithmic functions, learning to apply logarithmic properties for solving equations. This knowledge enabled me to work with exponential growth and decay problems, converting between exponential and logarithmic forms with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <h2>A Special Tribute</h2>
+            <div class="teacher-container">
+                <div class="teacher-image">
+                    <img src="placeholder-teacher.jpg" alt="Sir Jaynard Magpale Miranda">
+                </div>
+                <div class="teacher-content">
+                    <h3>Sir Jaynard Magpale Miranda</h3>
+                    <p>Sir Jaynard transformed my relationship with mathematics through patient explanation and thoughtful instruction. He deconstructs intricate concepts into digestible components, creating an environment where students progress at their own rhythm. His relaxed demeanor welcomes curiosity and eliminates pressure, which was instrumental in my journey toward confidence when facing previously intimidating mathematical challenges.</p>
+                    <p>Through his mentorship, my perception of algebra evolved from mechanical memorization into a dynamic framework for logical reasoning. He instilled in me the importance of embracing failure as a learning tool, verifying each stage of problem-solving, and recognizing the elegant design woven throughout mathematical principles.</p>
+                    <div class="teacher-quote">
+                        Thank you, Sir Jaynard — for your patience, guidance, and for making math understandable.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <div class="container">
+            <div class="reflection-container">
+                <h2>Personal Insights</h2>
+                <p class="reflection-text">My advanced algebra experience illuminated a fundamental truth: mathematics transcends calculation and embraces strategic reasoning, growth through challenges, and the recognition of underlying harmony. I remain deeply appreciative of the knowledge gained, the friendships forged throughout this academic journey, and Sir Jaynard's unwavering mentorship.</p>
+                <div class="reflection-photo">
+                    <img src="placeholder-class.jpg" alt="Our Algebra Family">
+                </div>
+                <p class="photo-caption">The Algebra Community — NEMSU, 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Nicole Placio — Advanced College Algebra, NEMSU</p>
+    </footer>
+</body>
+</html>
